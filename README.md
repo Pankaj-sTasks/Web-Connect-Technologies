@@ -12,7 +12,7 @@ This project is a social media application with user authentication, post creati
 1. **Clone the Repository:**
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Pankaj-sTasks/Web-Connect-Technologies.git
    cd backend
 
     Install Dependencies:
