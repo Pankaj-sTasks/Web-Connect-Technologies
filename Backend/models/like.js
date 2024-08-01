@@ -6,7 +6,8 @@ const Like = {
     },
     findByUserId: (userId, callback) => {
         db.query('SELECT * FROM likes WHERE user_id = ?', [userId], callback);
-    }
+    },
+    
 };
 
 module.exports = Like;
