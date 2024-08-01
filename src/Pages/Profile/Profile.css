@@ -1,0 +1,51 @@
+/* Profile.css */
+.UserProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100vh; /* Full viewport height to center vertically */
+}
+
+.UserProfile h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.UserProfile div {
+  font-size: 1rem;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.UserProfile strong {
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  .UserProfile {
+    padding: 15px;
+  }
+
+  .UserProfile h1 {
+    font-size: 1.5rem;
+  }
+
+  .UserProfile div {
+    font-size: 0.875rem;
+  }
+}

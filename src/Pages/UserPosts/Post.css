@@ -1,0 +1,71 @@
+
+.UserPosts {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 20px 0;
+  }
+  
+  /* Header section styling */
+  .PageHeaders {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .PageTitle h2 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  /* Posts section styling */
+  .PostsSection {
+    background-color: #fff;
+    padding: 40px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .posts-page-box {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .posts-page-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .PostContent h2 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin: 0 0 10px;
+  }
+  
+  .PostContent p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .PageTitle h2 {
+      font-size: 2rem;
+    }
+  
+    .PostContent h2 {
+      font-size: 1.25rem;
+    }
+  
+    .PostContent p {
+      font-size: 0.875rem;
+    }
+  }
+  
