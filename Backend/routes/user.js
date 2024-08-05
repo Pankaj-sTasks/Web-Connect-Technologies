@@ -1,23 +1,17 @@
 const express = require('express');
 const userRoute = express.Router();
-const {register, login} = require("../controllers/userController");
+const {register, login, userInfo} = require("../controllers/userController");
+const { postValidation} = require('../middleware/validation');
+
 const common = require("../middleware/auth")
-//const { postValidation } = require('../common/validation')
 
 
 
+userRoute.post('/register', postValidation,register);
 
-userRoute.post('/register', register);
+userRoute.post('/login',postValidation, login);
 
-//userRoute.get('/activate_account/:token',customerConfigCntrl.verifyAccount);
-
-userRoute.post('/login', login);
-
-// userRoute.post('/forgotPassword',postValidation,  customerConfigCntrl.forgotPassword);
-
-// userRoute.post('/confirmPassword',postValidation,  customerConfigCntrl.confirmPasswordUser);
-
-// userRoute.get('/resetPassword/:token',  customerConfigCntrl.resetPasswordButton);
+userRoute.get('/userInfo/:userId',common.tokenMiddlewareUser,userInfo);
 
 
 module.exports = userRoute;

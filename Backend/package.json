@@ -16,6 +16,8 @@
     "express": "^4.19.2",
     "jade": "^1.11.0",
     "jsonwebtoken": "^9.0.2",
-    "mysql2": "^3.11.0"
+    "mysql2": "^3.11.0",
+    "node-validator": "^0.1.27",
+    "sequelize": "^6.37.3"
   }
 }

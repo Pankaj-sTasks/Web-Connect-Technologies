@@ -15,7 +15,8 @@ const Follow = {
             JOIN users ON posts.user_id = users.id 
             WHERE follows.follower_id = ?
         `, [userId], callback);
-    }
+    },
+   
 };
 
 module.exports = Follow;

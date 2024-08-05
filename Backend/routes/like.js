@@ -6,6 +6,6 @@ const common = require("../middleware/auth")
 
 
 likeRoute.post('/:postId/like',common.tokenMiddlewareUser,  likePost);
-likeRoute.get('/user/:userId',  getLikesByUser);
+likeRoute.get('/likesByYou', common.tokenMiddlewareUser, getLikesByUser);
 
 module.exports = likeRoute;

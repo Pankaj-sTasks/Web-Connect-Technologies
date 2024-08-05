@@ -1,7 +1,7 @@
 const express = require('express');
 const postRoute = express.Router();
 const { createPost, getAllPosts, getPostsByUser } = require("../controllers/postController");
-//const { postValidation } = require('../common/validation')
+
 const common = require("../middleware/auth")
 
 postRoute.post('/',common.tokenMiddlewareUser, createPost);
