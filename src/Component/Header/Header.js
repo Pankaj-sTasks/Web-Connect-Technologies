@@ -122,6 +122,7 @@ const Header = () => {
         localStorage.setItem("oAuth", "Bearer " + result.token);
         localStorage.setItem("isLogin", true);
         dispatch(isLogin(true));
+        navigate(`/profile/${userId}`);
         togglesignin();
       } else {
         toast.error(result.message);
@@ -135,32 +136,33 @@ const Header = () => {
   const handlePostSubmit = (e) => {
     e.preventDefault();
     
-    // Define data object with content
-    const data = {
-      content: content, // Assuming postContent is your state for the post content
-    };
+    if (!content.trim()) {
+      alert("Post content cannot be empty.");
+      return;
+    }
+    
+    const data = { content };
     
     console.log(data, "post");
   
-    // Dispatch loader action to show loading spinner
     dispatch(loader(true)); 
-  
-    // Dispatch createPost action
+    
     dispatch(
       createPost(data, (result) => {
         dispatch(loader(false)); // Hide loading spinner
   
         if (result.status) {
           toast.success(result.message);
+         
           setShowCreatePost(false); // Hide the create post form
         } else {
           toast.error(result.message);
         }
       })
     );
-    
   };
-
+  
+  const isContentValid = content.trim().length > 0;
   return (
     <div className="header">
       <div className="container">
@@ -193,7 +195,7 @@ const Header = () => {
               onChange={(e) => setContent(e.target.value)}
               placeholder="What's on your mind?"
             />
-            <button type="submit">Submit Post</button>
+            <button type="submit" disabled={!isContentValid}>Submit Post</button>
           </form>
         </div>
       )}

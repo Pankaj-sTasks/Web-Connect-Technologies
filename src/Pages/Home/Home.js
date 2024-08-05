@@ -43,7 +43,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(loader(true));
     dispatch(
-      getAllPosts((resp) => {
+      getAllPosts({ page, limit },(resp) => {
         if (resp.status) {
           setAllPosts(resp.data);
           // Check like and follow status for each post and user
@@ -179,7 +179,7 @@ const Home = () => {
                   </h6>
                   <p
                     onClick={() => {
-                      navigate(`${item.user_id}`);
+                      navigate(`all_post_of_user/${item.user_id}`);
                       window.scrollTo(0, 0);
                     }}
                   >

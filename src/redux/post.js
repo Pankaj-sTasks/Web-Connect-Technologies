@@ -44,9 +44,9 @@ export const createPost = (postData, callback = () => {}) => async (dispatch) =>
   }
 };
 
-export const getAllPosts = (callback = () => {}) => async (dispatch) => {
+export const getAllPosts = (data,callback = () => {}) => async (dispatch) => {
   try {
-    const result = await Helper.getData(baseUrl).then(
+    const result = await Helper.getData(baseUrl+`?page=${data.page}&limit=${data.limit}`).then(
       (response) => response.data
     );
     console.log(result)
